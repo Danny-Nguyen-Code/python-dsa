@@ -21,3 +21,22 @@ def contains_duplicates(self, nums: List[int]) -> bool:
     return False
     """
 
+    """
+    hash set:
+    Time: O(n)
+    Space: O(n)
+
+    seen = set()
+    for i in range(len(nums)):
+        if num in seen: return True
+        seen.add(num)
+    return False
+    """
+
+    """
+    hash set length: if length of hash set is < list, there are dupes
+    Time: O(n)
+    Space: O(n)
+
+    return len(set(nums)) < len(nums)
+    """
