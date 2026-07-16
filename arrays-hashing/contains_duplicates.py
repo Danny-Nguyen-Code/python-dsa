@@ -4,6 +4,7 @@ def contains_duplicates(self, nums: List[int]) -> bool:
     Time: O(n^2)
     Space: O(1)
 
+    * times out from last case
     for i in range(len(nums)):
         for j in range(i + 1, len(nums)):
             if nums[i] == nums[j]: return True
@@ -27,7 +28,7 @@ def contains_duplicates(self, nums: List[int]) -> bool:
     Space: O(n)
 
     seen = set()
-    for i in range(len(nums)):
+    for num in nums:
         if num in seen: return True
         seen.add(num)
     return False
