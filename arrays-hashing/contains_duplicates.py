@@ -1,3 +1,7 @@
+def main():
+    nums = [1, 5, 8, 9]
+    contains_duplicates(nums)
+
 def contains_duplicates(self, nums: List[int]) -> bool:
     """
     brute force:
@@ -38,6 +42,9 @@ def contains_duplicates(self, nums: List[int]) -> bool:
     hash set length: if length of hash set is < list, there are dupes
     Time: O(n)
     Space: O(n)
-
-    return len(set(nums)) < len(nums)
     """
+    return len(set(nums)) < len(nums)
+    
+
+if __name__ == "__main__":
+    main()
