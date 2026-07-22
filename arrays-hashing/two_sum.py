@@ -23,7 +23,7 @@ def twoSum(self, nums: List[int], target: int) -> List[int]:
     for i, num in enumerate(nums):
         A.append([num, i])
 
-    A. sort()
+    A.sort()
     i, j = 0, len(nums) - 1
     while i < j:
         curr = A[i][0] + A[j][0]
@@ -34,6 +34,37 @@ def twoSum(self, nums: List[int], target: int) -> List[int]:
             i += 1
         else:
             j -= 1
+    return []
+    """
+
+    """
+    Hash map: 2 passes
+    Time: O(n)
+    Space: O(n)
+
+    indices = {}
+    for i, n in enumerate(nums):
+        indices[n] = i
+
+    for i, n in enumerate(num):
+        diff = target - n
+        if diff in indices and indices[diff] != i:
+            return [i, indices[diff]]
+    
+    return []
+    """
+
+    """
+    Hash map: 1 pass
+    Time: O(n)
+    Space: O(n)
+
+    prevMap = {}
+    for i, n in enumerate(nums):
+        diff = target - n
+        if diff in prevMap:
+            return [prevMap[diff], i]
+        prevMap[n] = i
     return []
     """
 
